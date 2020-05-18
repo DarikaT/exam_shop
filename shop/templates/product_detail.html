@@ -1,0 +1,347 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<ol class="breadcrumb editContent">
+  <li class="breadcrumb-item">
+      <a href="index.html" class="editContent">Home</a>
+  </li>
+  <li class="breadcrumb-item active editContent">Single Page</li>
+</ol>
+<section class="ab-info-main py-md-6 py-4 editContent" style="padding-left: 3rem; padding-right: 3rem;">
+    <div class="container-fluid py-md-3">
+        <div class="row">
+            <div class="side-bar col-lg-3">
+
+                <div class="search-bar w3layouts-newsletter">
+                    <h3 class="sear-head editContent" >Поиск фильма</h3>
+                    <form action="#" method="post" class="d-flex editContent" >
+                        <input type="search" placeholder="Введите название..." name="search" class="form-control" required="">
+                        <button class="btn1 btn" ><span class="fa fa-search" aria-hidden="true" ></span></button>
+                    </form>
+                </div>
+                <!--preference -->
+                <div class="left-side my-4">
+                    <h3 class="sear-head editContent">Категории</h3>
+                    {% for category in object_list %}
+                    <ul class="w3layouts-box-list">
+                        <li class="editContent" >
+                            <input type="checkbox" class="checked">
+                            <span class="span editContent" >{{category.category}}</span>
+                        </li>
+                    </ul>
+                    {% endfor %}
+                </div>
+                <!-- // preference -->
+                <!-- discounts -->
+                <div class="left-side">
+                    <h3 class="sear-head editContent" >Цена</h3>
+                    {% for price in object_list %}
+                    <ul class="w3layouts-box-list">
+                        <li class="editContent" >
+                            <input type="checkbox" class="checked">
+                            <span class="span editContent">{{ price.price }}</span>
+                        </li>
+                    </ul>
+                    {% endfor %}
+                   
+                </div>
+                <!-- //discounts -->
+                <!-- reviews -->
+                <div class="deal-leftmk left-side">
+                    <h3 class="sear-head editContent">Последние добавленные</h3>
+                    <div class="special-sec1 row mt-3 editContent">
+                        <div class="img-deals col-md-4">
+                            <img src="bundles/images/s4.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="img-deal1 col-md-4">
+                            <h3 class="editContent">Рэмбо: Последняя кровь</h3>
+                            <a href="moviesingle.html" class="editContent" ></a>
+                        </div>
+
+                    </div>
+                    <div class="special-sec1 row mt-3 editContent" >
+                        <div class="img-deals col-md-4">
+                            <img src="bundles/images/s2.jpg" class="img-fluid" alt="" >
+                        </div>
+                        <div class="img-deal1 col-md-8">
+                            <h3 class="editContent" >Холодное сердце 2</h3>
+                            <a href="moviesingle.html" class="editContent" ></a>
+                        </div>
+
+                    </div>
+                    <div class="special-sec1 row mt-3 editContent" >
+                        <div class="img-deals col-md-4">
+                            <img src="bundles/images/s1.jpg" class="img-fluid" alt="" >
+                        </div>
+                        <div class="img-deal1 col-md-8">
+                            <h3 class="editContent" >К звездам</h3>
+                            <a href="moviesingle.html" class="editContent" ></a>
+                        </div>
+
+                    </div>
+                    <div class="special-sec1 row mt-3 editContent" >
+                        <div class="img-deals col-md-4">
+                            <img src="bundles/images/s5.jpg" class="img-fluid" alt="" >
+                        </div>
+                        <div class="img-deal1 col-md-8">
+                            <h3 class="editContent" >Терминатор: Темные судьбы</h3>
+                            <a href="moviesingle.html" class="editContent" ></a>
+                        </div>
+
+                    </div>
+                    <div class="special-sec1 row mt-3 editContent" >
+                        <div class="img-deals col-md-4">
+                            <img src="bundles/images/s3.jpg" class="img-fluid" alt="" >
+                        </div>
+                        <div class="img-deal1 col-md-8">
+                            <h3 class="editContent" >Джокер</h3>
+                            <a href="moviesingle.html" class="editContent" ></a>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- //deals -->
+
+            </div>
+            <!-- //product left -->
+            <!-- product right -->
+            <div class="left-ads-display col-lg-8">
+              <div class="row">
+                  <div class="desc1-left col-md-6">
+                      <img style="height: 500px;" src="{{product.image.url}}" class="img-fluid" alt="">
+                  </div>
+                  <div class="desc1-right col-md-6 pl-lg-4">
+                      <h2 class="editContent" style="outline: none; cursor: inherit;">
+                          {{product.name}}</h2>
+                      <ul>
+                          <li style="list-style: none"><span><b>Категория: </b> {{product.category}}</span></li>
+                          <li style="list-style: none"><span><b>Цена: </b>{{product.price}} сом</span>
+                          </li>
+                          <li style="list-style: none"><span><b>Количество: </b>{{product.quantity}}</span>
+                          </li>
+                  </div>
+              </div>
+              <div class="row sub-para-w3layouts mt-5">
+
+                  <h3 class="shop-sing editContent" style="outline: none; cursor: inherit;">
+                      Описание: </h3>
+                
+                  <p class="editContent" style="outline: none; cursor: inherit;">{{product.description}}</p>
+                  
+              </div>
+              <hr>
+              <div class="row">
+                  <div class="single-form-left">
+                      <!-- contact form grid -->
+                      <div class="contact-single">
+                          <h3 class="editContent" style="outline: none; cursor: inherit;">
+                              <span class="sub-tittle editContent"
+                                    style="outline: none; cursor: inherit;">02</span>Оставить отзыв</h3>
+                          <form action="#" method="get" class="mt-4">
+                              <div class="form-group editContent"
+                                   style="outline: none; cursor: inherit;">
+                                  <label for="contactcomment" class="editContent"
+                                         style="outline: none; cursor: inherit;">Ваш комментарий
+                                      *</label>
+                                  <textarea class="form-control border" rows="5"
+                                            id="contactcomment" required=""></textarea>
+                              </div>
+                              <div class="d-sm-flex">
+                                  <div class="col-sm-6 form-group p-0 editContent"
+                                       style="outline: none; cursor: inherit;">
+                                      <label for="contactusername" class="editContent"
+                                             style="outline: none; cursor: inherit;">Имя
+                                          *</label>
+                                      <input type="text" class="form-control border"
+                                             id="contactusername" required="">
+                                  </div>
+                                  <div class="col-sm-6 form-group ml-sm-3 editContent"
+                                       style="outline: none; cursor: inherit;">
+                                      <label for="contactemail" class="editContent"
+                                             style="outline: none; cursor: inherit;">Email
+                                          *</label>
+                                      <input type="email" class="form-control border"
+                                             id="contactemail" required="">
+                                  </div>
+                              </div>
+                              <button type="submit"
+                                      class="mt-3 btn btn-success btn-block py-3"
+                                      style="outline: none; cursor: inherit;">Отправить
+                              </button>
+                          </form>
+                      </div>
+                      <!--  //contact form grid ends here -->
+                  </div>
+                  
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- //contact -->
+<!-- footer -->
+<footer class="editContent">
+  <div class="container">
+      <div class="row footer-top">
+          <div class="col-lg-4 footer-grid_section_w3layouts">
+              <h2 class="logo-2 mb-lg-4 mb-3">
+                  <a href="index.html" class="editContent">
+                          <span class="fa" aria-hidden="true"
+                                style="outline: none; cursor: inherit;">
+                              Django School
+                          </span>
+                  </a>
+              </h2>
+              <p class="editContent" style="outline: none; cursor: inherit;">
+                  Канал для программистов и людей, которые хотят развиваться в сфере IT.
+                  Видео уроки по python 3, Django 2, Django 3, JavaScript, Vue.js, HTML, CSS
+                  и многое другое.
+              </p>
+              <h4 class="sub-con-fo ad-info my-4 editContent"
+                  style="outline: none; cursor: inherit;">Catch on Social</h4>
+              <ul class="w3layouts_social_list media-soc list-unstyled">
+                  <li>
+                      <a href="#" class="w3pvt_facebook editContent"
+                         style="outline: none; cursor: inherit;">
+                          <span class="fa fa-facebook-f"
+                                style="outline: none; cursor: inherit;"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="w3pvt_twitter editContent"
+                         style="outline: none; cursor: inherit;">
+                          <span class="fa fa-twitter"
+                                style="outline: none; cursor: inherit;"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="w3pvt_dribble editContent"
+                         style="outline: none; cursor: inherit;">
+                          <span class="fa fa-dribbble"
+                                style="outline: none; cursor: inherit;"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="w3pvt_google editContent"
+                         style="outline: none; cursor: inherit;">
+                          <span class="fa fa-google-plus"
+                                style="outline: none; cursor: inherit;"></span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-lg-8 footer-right">
+              <div class="w3layouts-news-letter">
+                  <h3 class="footer-title text-uppercase editContent mb-lg-4 mb-3"
+                      style="outline: none; cursor: inherit;">Newsletter</h3>
+
+                  <p class="editContent" style="outline: none; cursor: inherit;">By
+                      subscribing to our mailing list you will always get latest news and
+                      updates from us.</p>
+                  <form action="#" method="post" class="w3layouts-newsletter">
+                      <input type="email" name="Email" class="editContent"
+                             placeholder="Enter your email..." required=""
+                             style="outline: none; cursor: inherit;">
+                      <button class="btn1 btn" style="outline: none; cursor: inherit;"><span
+                              class="fa fa-paper-plane-o" aria-hidden="true"
+                              style="outline: none; cursor: inherit;"></span></button>
+
+                  </form>
+              </div>
+              <div class="row mt-lg-4 bottom-w3layouts-sec-nav mx-0">
+                  <div class="col-md-4 footer-grid_section_w3layouts">
+                      <h3 class="footer-title text-uppercase editContent mb-lg-4 mb-3"
+                          style="outline: none; cursor: inherit;">Разделы</h3>
+                      <ul class="list-unstyled w3layouts-icons">
+                          <li>
+                              <a href="index.html" class="editContent"
+                                 style="outline: none; cursor: inherit;">Главная</a>
+                          </li>
+                          <li>
+                              <a href="about.html" class="editContent"
+                                 style="outline: none; cursor: inherit;">Категории</a>
+                          </li>
+                          <li>
+                              <a href="contact.html" class="editContent"
+                                 style="outline: none; cursor: inherit;">Контакты</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="col-md-4 footer-grid_section_w3layouts">
+                      <!-- social icons -->
+                      <div class="agileinfo_social_icons">
+                          <h3 class="footer-title text-uppercase editContent mb-lg-4 mb-3"
+                              style="outline: none; cursor: inherit;">Pages</h3>
+                          <ul class="list-unstyled w3layouts-icons">
+
+                              <li>
+                                  <a href="#" class="editContent"
+                                     style="outline: none; cursor: inherit;">About Us</a>
+                              </li>
+                              <li>
+                                  <a href="#" class="editContent"
+                                     style="outline: none; cursor: inherit;">About Us</a>
+                              </li>
+                              <li>
+                                  <a href="#" class="editContent"
+                                     style="outline: none; cursor: inherit;">About Us</a>
+                              </li>
+                              <li>
+                                  <a href="#" class="editContent"
+                                     style="outline: none; cursor: inherit;">About Us</a>
+                              </li>
+                              <li>
+                                  <a href="#" class="editContent"
+                                     style="outline: none; cursor: inherit;">About Us</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <!-- social icons -->
+                  </div>
+                  <div class="col-md-4 footer-grid_section_w3layouts my-md-0 my-5">
+                      <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3 editContent"
+                          style="outline: none; cursor: inherit;">Contact Info</h3>
+                      <div class="contact-info">
+                          <div class="footer-address-inf my-4">
+                              <h4 class="ad-info mb-2 editContent"
+                                  style="outline: none; cursor: inherit;">Email </h4>
+                              <p class="editContent" style="outline: none; cursor: inherit;">
+                                  <a href="mailto:info@example.com">info@example.com</a></p>
+                          </div>
+                          <div class="footer-address-inf">
+                              <h4 class="ad-info mb-2 editContent"
+                                  style="outline: none; cursor: inherit;">Location</h4>
+                              <p class="editContent" style="outline: none; cursor: inherit;">
+                                  New York City</p>
+                          </div>
+                      </div>
+                  </div>
+
+
+              </div>
+
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- //footer -->
+<div class="cpy-right py-3">
+  <div class="container">
+      <div class="row">
+          <p class="col-md-10 text-left">© 2019 DjangoMovie. All rights reserved | Design by
+              <a href="https://djangochannel.com"> DJANGO SCHOOL.</a>
+          </p>
+          <!-- move top icon -->
+          <a href="#home" class="move-top text-right col-md-2"><span
+                  class="fa fa-long-arrow-up" aria-hidden="true"
+                  style="outline: none; cursor: inherit;"></span></a>
+          <!-- //move top icon -->
+      </div>
+  </div>
+</div>
+</div>
+</body>
+{% endblock%}

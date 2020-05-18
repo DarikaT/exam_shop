@@ -13,7 +13,7 @@ class Category(models.Model):
         verbose_name_plural = 'Категории'
 
 class Product(models.Model):
-    name = models.CharField('Наименование', max_length=150)
+    name = models.CharField('Наименование', max_length=60)
     description = models.TextField('Описание')
     price = models.PositiveSmallIntegerField('Цена', default=0)
     image = models.ImageField('Изображение', upload_to='media/product/')
@@ -21,6 +21,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, verbose_name='Категория')
     quantity = models.PositiveIntegerField('Количество', default=0)
     draft = models.BooleanField('Черновик', default=False)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

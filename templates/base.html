@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- //Meta tag Keywords -->
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Bootstrap-Core-CSS -->
+    <!--/ Style-CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+    <!--// Style-CSS -->
+    <!-- font-awesome-icons -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+  <!-- /Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+    <!-- //Fonts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    <title>Document</title>
+</head>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" style="font-weight: bolder; color: #FFC107;"  href="{% url 'product_list_url'%}">Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" wfd-id="41">
+      <span class="navbar-toggler-icon" wfd-id="38"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse" wfd-id="31">
+      <ul class="navbar-nav mr-auto" wfd-id="33">
+        <li class="nav-item active" wfd-id="36">
+          <a class="nav-link" style="font-weight: normal; font-size: large;" href="{% url 'product_list_url'%}">Товары<span class="sr-only" wfd-id="37">(current)</span></a>
+        </li>
+        <li class="nav-item active" wfd-id="36">
+          <a class="nav-link" style="font-weight: normal; font-size: large;" href="{% url 'product_list_url'%}">Категории<span class="sr-only" wfd-id="37">(current)</span></a>
+        </li>
+
+    </div>
+      </ul>
+      <form class="form-inline"  method="GET">
+        <input class="form-control mr-sm-2" type="search" placeholder="Найти" name = 'search_name' aria-label="Search">
+        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Найти</button>
+      </form>
+    </div>
+  </nav>
+
+
+  
+<body>
+    
+    {% block content %}
+
+
+    {% endblock %}  
+
+</body>
+</html>
+
+
