@@ -1,4 +1,4 @@
-from .models import Product
+from .models import Product, Category
 from django.db.models import Q
 
 class GetQuerySetMixin():
@@ -12,3 +12,9 @@ class GetQuerySetMixin():
         else:
             queryset = Product.objects.all()
         return queryset
+
+class DropdownMixin():
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['categories'] = Category.objects.all()
+        return context

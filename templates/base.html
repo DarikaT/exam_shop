@@ -32,13 +32,19 @@
           <a class="nav-link" style="font-weight: normal; font-size: large;" href="{% url 'product_list_url'%}">Товары<span class="sr-only" wfd-id="37">(current)</span></a>
         </li>
         <li class="nav-item active" wfd-id="36">
-          <a class="nav-link" style="font-weight: normal; font-size: large;" href="{% url 'product_list_url'%}">Категории<span class="sr-only" wfd-id="37">(current)</span></a>
+          <a class="nav-link" style="font-weight: normal; font-size: large;" href="{% url 'product_list_url'%}">Категории </a>
+          <input type="checkbox" id="drop-2">
+          <ul>
+            {% for category in categories %}
+              <li><a href="#">{{category.name}}</a></li>
+            {% endfor %}
+          </ul>
         </li>
 
     </div>
       </ul>
       <form class="form-inline"  method="GET">
-        <input class="form-control mr-sm-2" type="search" placeholder="Найти" name = 'search_name' aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Найти" name = 'q' aria-label="Search">
         <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Найти</button>
       </form>
     </div>
