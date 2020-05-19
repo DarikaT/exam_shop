@@ -6,8 +6,8 @@
             <img src="{{product.image.url}}" class="img-fluid" alt="">
         </div>
         <div class="img-deal1 col-md-4">
-            <h3 class="editContent">{{product.name}}</h3>
-            <a href="{% url 'product_detail_url' product.pk %}" class="editContent" ></a>
+            
+            <a href="{% url 'product_detail_url' product.pk %}" class="editContent" ><h3 class="editContent">{{product.name}}</h3></a>
         </div>
     </div>
     {%endfor%}
