@@ -3,7 +3,7 @@ from django.db.models import Q
 
 class GetQuerySetMixin():
     def get_queryset(self):
-        query_result = self.request.GET.get('search_name')
+        query_result = self.request.GET.get('q')
         if query_result: 
             queryset = Product.objects.filter(
                 Q(name__icontains=query_result)|

@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'shop.apps.ShopConfig',
+    'account.apps.AccountConfig',
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -81,6 +85,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+
 
 
 # Password validation
@@ -126,3 +133,6 @@ STATICFILES_DIRS = [STATIC_DIR]
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'product_list_url'
+LOGOUT_REDIRECT_URL = 'product_list_url'

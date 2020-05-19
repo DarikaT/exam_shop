@@ -25,6 +25,7 @@ class ProductDetailView(GetQuerySetMixin, DropdownMixin, DetailView):
     model = Product
     template_name = 'product_detail.html'
 
+    
 
 
 
